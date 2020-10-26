@@ -1,19 +1,27 @@
 package exceptionHandler;
 
 public class predicterExceptionHandler extends RuntimeException {
+	public enum predicterException{
+		predictAlgorithmPredictError1("predictAlgorithm doesn't predict.");
+		
+		// structure
+		private predicterException (String name) {
+			this.name = name;
+		}
+		
+		// getter
+		public String getName() { return name; }
+		
+		
+		private String name;
+	}
+	
 	// structure
-    public predicterExceptionHandler(Integer code,String message) {
-        super(message);
-        this.code = code;
+    public predicterExceptionHandler(predicterException exception) {
+        super(exception.getName());
+		this.exception = exception;
     }
-
-    // getter
-    public Integer getCode() { return code; }
-
-    // setter
-    public void setCode(Integer code) { this.code = code; }
     
     // data
-    private String message;
-    private Integer code;
+    private predicterException exception;
 }

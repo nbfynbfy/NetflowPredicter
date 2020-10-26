@@ -29,7 +29,7 @@ public abstract class predictAlgorithm {
 	public netflowData getAskData() { return this.askData; }
 	public netflowData getRstData() { 
 		if (!isPredict) {
-			throw new predicterExceptionHandler(1, "PredictAlgorithm doesn't predict.");
+			throw new predicterExceptionHandler(predicterExceptionHandler.predicterException.predictAlgorithmPredictError1);
 		} else {
 			return this.rstData;
 		}
